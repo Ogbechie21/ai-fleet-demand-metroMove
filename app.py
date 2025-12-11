@@ -94,7 +94,7 @@ _, full_X, _, _, _ = load_data()
 
 # ---------- 2. STREAMLIT UI ----------
 
-st.title("🚍 MetroMove Fleet Risk & Maintenance Prediction")
+st.title(" MetroMove Fleet Risk & Maintenance Prediction")
 st.write(
     "This app uses machine learning to predict **trip risk** (delayed vs normal) "
     "and estimate **maintenance cost** based on trip and vehicle features."
@@ -158,7 +158,7 @@ input_data = pd.DataFrame(
 st.subheader("Preview of Input Data")
 st.write(input_data)
 
-if st.button("🔍 Predict Trip Risk & Maintenance Cost"):
+if st.button(" Predict Trip Risk & Maintenance Cost"):
     # Classification
     risk_pred = clf_logreg_bal.predict(input_data)[0]
     risk_prob = clf_logreg_bal.predict_proba(input_data)[0, 1]
@@ -169,8 +169,9 @@ if st.button("🔍 Predict Trip Risk & Maintenance Cost"):
     st.subheader("Prediction Results")
 
     if risk_pred == 1:
-        st.error(f"🚨 High-Risk Trip Detected (Delayed probability: {risk_prob:.2f})")
+        st.error(f" High-Risk Trip Detected (Delayed probability: {risk_prob:.2f})")
     else:
-        st.success(f"✅ Trip Likely Normal (Delayed probability: {risk_prob:.2f})")
+        st.success(f" Trip Likely Normal (Delayed probability: {risk_prob:.2f})")
 
     st.info(f"Estimated maintenance cost: **{cost_pred:.2f}** (approximate)")
+    # streamlit run app.py

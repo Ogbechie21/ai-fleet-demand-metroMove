@@ -174,4 +174,4 @@ if st.button(" Predict Trip Risk & Maintenance Cost"):
         st.success(f" Trip Likely Normal (Delayed probability: {risk_prob:.2f})")
 
     st.info(f"Estimated maintenance cost: **{cost_pred:.2f}** (approximate)")
-    # streamlit run app.py
+  
